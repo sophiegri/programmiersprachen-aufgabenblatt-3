@@ -1,0 +1,58 @@
+namespace list {
+template <typename Liste>
+
+class list { //Definition des list Templates
+
+list <int> l{1,2,4,5};
+list <int>::interator i=l.begin ();
+auto i = l.begin (); //Instantiierung einer Liste int und Iterators
+
+reference front ();
+reference back (); 
+const_reference front () const; //Interface zum Zugriff
+
+void push_back (const T& x);
+void pop_back (void);
+void push_front (const T& x);
+void pop_front (void); //Zugriff auf Liste 
+
+//Beispiel:
+list <int> l{5,5,5};
+l.push_back(7);
+l.push_front(7); //{7,5,5,5,7}
+l.pop_front(); //{5,5,5,7}
+
+//Einfügen anderer Listen 
+iterator splice (iterator pos, list <T>& x); //Fügt alle Elemente aus Liste x an Position pos, Liste x ist danach leer 
+iterator splice (iterator post, list <T>& x, iterator i); //Fügt Element i aus Liste x an Position pos, i ist danach entfernt
+iterator splice (iterator pos, list <T>& x, iterator from, iterator to); //transferiert Elemente von from zu to aus Liste x an Position pos
+
+//Löschen 
+void remove (T const& value); //lösche element value
+list <int> l {1,2,3,4};
+l.remove (3); //value 3 wird gelöscht 
+
+for (auto i = l.begin (); i != l.end (); ++i) {
+    if ((*i) == 3) {
+        l. erase (i);
+        break;
+    }
+}
+
+//Sortieren einer Liste 
+void sort (); //Sortiere die Elemente nach dem Kriterium <
+void sort (Compare CompOp); //Sortiere nach Kriterium CompOp
+void reverse (void); //Kehrt die Reihenfolge in der Liste um 
+
+//Interface
+-alle Iteratoren von list sind biderektionale iteratoren (i++ und i--), aber keine random access Iteratoren (auch i+n, i-n, für int n)
+
+//Zusammenfassung 
+-nur sequentieller Zugriff, kein wahlfreier Zugriff 
+-Effizientes Einfügen und Löschen an jeder Position O(1)
+-Einfügen ganzer Listen möglich, Entfernen bestimmter Elemente, Mischen von Listen, Sortieren möglich 
+
+
+
+};
+};
