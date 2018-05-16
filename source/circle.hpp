@@ -3,8 +3,8 @@
 #include "vec2.hpp"
 #include "color.hpp"
 #include <iostream> 
-#include <string> // std::string 
-
+#include <string> // string 
+using namespace std; 
 
 class Circle 
 {
@@ -14,30 +14,35 @@ class Circle
     Color color; 
 
 //Aufgabe 3.4
-    std::string name_; 
+    string name; 
 
     
     public: //Methoden und Konstruktor sind öffentlich
     Circle (); 
+    Circle (string const& _name);
     Circle (float _radius, Vec2 const& _center, Color const& _color,
-            std::string const& _name);
+            string const& _name);
    
 
     Vec2 get_center() const;
     float get_radius() const; 
     Color get_color() const;  
     float get_circumference () const; 
+    string get_name () const; 
 
 //Aufgabe 2.11    
     bool is_inside (Vec2 const& point) const;
-    
+
 
 //Aufgabe 3.4 
-    std::ostream& print (std::ostream& os) const;
-
+    
+    ostream& print (ostream& os) const;
 };
 
-    std::ostream& operator<< (std::ostream& os, const Circle& c); 
+    bool operator < (Circle const& c_1, Circle const& c_2);
+    bool operator > (Circle const& c_1, Circle const& c_2);
+    ostream& operator<< (ostream& os, const Circle& c); 
+
 
 
 #endif

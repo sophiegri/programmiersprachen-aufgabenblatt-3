@@ -7,14 +7,23 @@
 Circle::Circle ():
   radius{1.0f},
   center{0.0f,0.0f},
-  color{0.0f,0.0f,0.0f}
+  color{0.0f,0.0f,0.0f},
+  name{"default_name"}
+  {} 
+  
+Circle::Circle (std::string const& _name):
+  radius{1.0f},
+  center{0.0f,0.0f},
+  color{0.0f,0.0f,0.0f},
+  name{_name}
   {}
+
 
 Circle::Circle (float _radius, Vec2 const& _center, Color const& _color, std::string const& _name):
   radius{_radius},
   center{_center},
   color{_color},
-  name_{_name}
+  name{_name}
   {}
 
 
@@ -57,6 +66,37 @@ bool Circle::is_inside (Vec2 const& point) const
 }
 
 //Aufgabe 3.4 
+//anhand des radius kann nun der Circle sortiert werden
+
+bool operator < (Circle const& c_1, Circle const& c_2) { //hier wird der kleiner operator definiert 
+  if (c_1.get_radius() < c_2.get_radius() ) 
+  {
+    return true; 
+  }
+  else 
+  {
+    return false;
+  }
+}
+
+bool operator > (Circle const& c_1, Circle const& c_2)
+{
+  if (c_1.get_radius() > c_2.get_radius() )
+  {
+    return true; 
+  }  
+  else 
+  {
+    return false;
+  }
+}
+
+
+std::string Circle::get_name() const
+{
+  return name;
+}
+
 
 std::ostream& operator<<(std::ostream& os, const Circle& c) 
 {  
@@ -66,10 +106,10 @@ std::ostream& operator<<(std::ostream& os, const Circle& c)
 
 std::ostream& Circle::print (std::ostream& os) const 
 {
-  os << '(' << "Name: " << name_  << ')' << "\n"
-     << '(' << "Position: " << center.x << "," << center.y << ')' << "\n"
-     << '(' << "Farbe: " << color.r << "," << color.g << "," << color.b << "," << ')' << "\n"
-     << '(' << "Radius: " << radius <<  ')' << "\n"; 
+  os << "Name: " << name  << "\n"
+     << "Position: " << center.x << "," << center.y << "\n"
+     << "Farbe: " << color.r << "," << color.g << "," << color.b  << "\n"
+     << "Radius: " << radius << "\n"; 
   return os;
   
 }
