@@ -1,0 +1,37 @@
+//Aufgabe 3.1 
+Als Container bezeichnet man einen Datentyp, der Daten gleichen Typs in einer bestimmten Struktur zusammenfasst. 
+Die Container sind als Klassentemplates realisiert und der Typ der Daten kann dadurch frei gewählt werden (generisch).
+Bspl. Array, bekommt Templateparameter Datentyp und Anzahl der Elemente. (std::array ist ein C-Array mit zusätzlichen Eigenschaften).
+Wichtiger Container ist std::vector, ist wie ein Array, dessen Größe sich zur Laufzeit anpassen lässt. Bekommt nur Datentyp als Template, Anzahl der Elemente ist dynamisch. 
+sequentielle Container: array, vector, list, forward_list, deque 
+assoziative Container: unordered_map, unordered_multimap, unordered_multiset, unordered_set, map, multimap, multiset, set 
+-Speichern der Punkte eines Polygons
+-Zuordnung von Farbnamen und entsprechenden RGB-Werten
+-FIFO-Warteschlange von Druckaufträgen
+
+
+
+Templates: 
+für eine generische Programmierung, das heißt: Definitionen von Funktionen auf abstrakten Datentypen. 
+Einfach in Sprachen mit dynamischer Typisierung (ungetypte Variablen, Funktionen, Parameter).
+Definition der freien Funktion max als Template Funktion: 
+template <typename T>
+T const& max (T const& a, T const& b) {
+    return (a>b ? a:b);
+}
+
+template <typenname T> definiert T als Typ-Parameter 
+
+STL: 
+Standard Template Libary 
+Ziele sind unter anderem keine Festlegung auf konkrete Typen, nicht langsamer als handgeschriebener Code, Vollstädnig, primitiv, typsicher 
+Deckt Container, Iteratoren, Algorithmen, Strings, Streams, Numerik ab. 
+
+Algorithmen: 
+Repräsentieren Funktionalität, Zugriff nur über Iteratoren 
+
+Iteratoren:
+Ermöglichen den Zugriff auf Container. Verweise auf Objekte in einerm Container, Pointer Semantik, einheitliche Schnittstelle
+
+Container:
+Generische Datenstrukturen, bestehen aus Arrays, Vektoren, Liste, Sets, Maps
