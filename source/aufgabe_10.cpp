@@ -24,7 +24,7 @@ std::copy (L.begin() , L.end(), v_0.begin() ); //Die Elemente aus der Liste werd
 std::cout << "My vector contains:"; 
     for (std::vector<int>::iterator it = v_0.begin(); it!=v_0.end(); ++it) //Ausgabe mit Iterator it 
     {
-        std::cout << ' ' << *it; 
+        std::cout << ' ' << *it;  //Dereferenzierungsoperator: Gib mir Element unter dem Iterator
         std::cout << '\n'; 
     }
 

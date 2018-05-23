@@ -1,15 +1,33 @@
 //Aufgabe 3.1 
+
 Als Container bezeichnet man einen Datentyp, der Daten gleichen Typs in einer bestimmten Struktur zusammenfasst. 
 Die Container sind als Klassentemplates realisiert und der Typ der Daten kann dadurch frei gewählt werden (generisch).
 Bspl. Array, bekommt Templateparameter Datentyp und Anzahl der Elemente. (std::array ist ein C-Array mit zusätzlichen Eigenschaften).
 Wichtiger Container ist std::vector, ist wie ein Array, dessen Größe sich zur Laufzeit anpassen lässt. Bekommt nur Datentyp als Template, Anzahl der Elemente ist dynamisch. 
-sequentielle Container: array, vector, list, forward_list, deque 
+
+Sequentielle Container: array, vector, list, forward_list, deque 
 assoziative Container: unordered_map, unordered_multimap, unordered_multiset, unordered_set, map, multimap, multiset, set 
 -Speichern der Punkte eines Polygons
 -Zuordnung von Farbnamen und entsprechenden RGB-Werten
 -FIFO-Warteschlange von Druckaufträgen
 
+//Aufgabe 3.5 
 
+std::map<string, int> matrikelnummern; 
+//Hinzufügen von vielen Studenten 
+matrikelnummern["Max Mustermann"] = 12345;
+matrikelnummern["Erika Mustermann"] = 23523;
+//...
+exmatrikulation(matrikelnummern["Fred Fuchs"]);
+
+Bei diesem Programmsegment kann es zu unerwartetem Verhalten kommen, weil ..
+Dieses Problem kann vermieden werden, indem ..
+Zum Einfügen und Suchen gibt es folgende Möglichkeiten, .. 
+Folgende Suchmethoden sind const: .. 
+
+
+
+//Ergänzungen
 
 Templates: 
 für eine generische Programmierung, das heißt: Definitionen von Funktionen auf abstrakten Datentypen. 
