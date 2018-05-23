@@ -39,10 +39,11 @@ class Circle
     ostream& print (ostream& os) const;
 };
 
-    bool operator < (Circle const& c_1, Circle const& c_2);
-    bool operator > (Circle const& c_1, Circle const& c_2);
-    ostream& operator<< (ostream& os, const Circle& c); 
+    bool operator < (Circle const& lhs, Circle const& rhs); //left hand side und right hand side, logisch wegen links und rechts Vergleich
+    bool operator > (Circle const& lhs, Circle const& rhs);
+    bool operator == (Circle const& lhs, Circle const& rhs); 
 
+    ostream& operator<< (ostream& os, const Circle& c);    
 
 
 #endif
