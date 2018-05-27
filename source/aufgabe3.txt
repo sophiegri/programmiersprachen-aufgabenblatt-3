@@ -2,14 +2,24 @@
 
 Als Container bezeichnet man einen Datentyp, der Daten gleichen Typs in einer bestimmten Struktur zusammenfasst. 
 Die Container sind als Klassentemplates realisiert und der Typ der Daten kann dadurch frei gewählt werden (generisch).
+Container werden in ihrer Organisation, den Zugriffs- und Ablagemöglichkeiten der einzelnen Elementen unterschieden.
 Bspl. Array, bekommt Templateparameter Datentyp und Anzahl der Elemente. (std::array ist ein C-Array mit zusätzlichen Eigenschaften).
 Wichtiger Container ist std::vector, ist wie ein Array, dessen Größe sich zur Laufzeit anpassen lässt. Bekommt nur Datentyp als Template, Anzahl der Elemente ist dynamisch. 
 
-Sequentielle Container: array, vector, list, forward_list, deque 
-assoziative Container: unordered_map, unordered_multimap, unordered_multiset, unordered_set, map, multimap, multiset, set 
--Speichern der Punkte eines Polygons
--Zuordnung von Farbnamen und entsprechenden RGB-Werten
--FIFO-Warteschlange von Druckaufträgen
+Bei sequentiellen Containern werden die Elemente direkt über eine bestimmte Position gespeichert und abgerufen. 
+Beispiele hierfür: array, vector, list, forward_list, deque 
+In assoziativen Containern können die Elemente unter einem beliebigen aber bestimmten Schlüssel gespeichert werden. 
+Unter diesem Schlüssel ist das Element immer abrufbar und wieder auffindbar. 
+Die Sortierungsmöglichkeiten sind hierbei allerdings beschränkt, da sich der Schlüssel nicht verändern lässt. 
+Die Elemente des assoziativen Container sind nach ihrem Schlüssel sortiert. 
+Beispiele hierfür: unordered_map, unordered_multimap, unordered_multiset, unordered_set, map, multimap, multiset, set 
+
+Für das Speichern der Punkte eines Polygons würde ich einen sequentiellen Container verwenden. Zum Beispiel eine Liste. 
+Für die Zuordnung von Farbnamen und entsprechenden RGB-Werten wäre ein assoziativer Container wie eine map oder set sinnvoll, da hier 
+den bestimmten Elementen bestimmte Werte zugeordnet werden können. R=1,0,0 ; G=0,1,0 ; B=0,0,1 
+Eine FIFO Warteschlange von Druckaufträgen ist in einem sequentiellen Container wie eine list oder array sinnvoll, da hier eine Ordnung benötigt wird und immer 
+auf das erste Element in dem Container zugegriffen wird. 
+
 
 //Aufgabe 3.5 
 
@@ -20,11 +30,23 @@ matrikelnummern["Erika Mustermann"] = 23523;
 //...
 exmatrikulation(matrikelnummern["Fred Fuchs"]);
 
-Bei diesem Programmsegment kann es zu unerwartetem Verhalten kommen, weil ..
-Dieses Problem kann vermieden werden, indem ..
-Zum Einfügen und Suchen gibt es folgende Möglichkeiten, .. 
-Folgende Suchmethoden sind const: .. 
-
+Der Container map ist ein assoziativer Container, dessen Elemente einen Schlüssel und einnen Wert haben. 
+Der Schlüssel ist in diesem Beispiel der Name und der Wert ist die Matrikelnummer. 
+Mittels des Schlüssels ist das Auffinden von Elementen recht einfach, denn die Elemente dieses Containers sind
+nach ihren Schlüsseln geordnet. Die Schlüssel sind nicht modifizierbar, der Wert kann verändert werden. 
+exmatrikulation stellt in diesem Fall eine Methode dar, die auf den Container matrikelnummern zugreift und den Wert des Schlüssels 
+Fred Fuchs aufruft. Falls dieser Schlüssel in der map nicht eingetragen ist, wird er standardmäßig mit dem Wert 0 hinzugefügt. Und durch
+die aufgerufene Methode wird der Wert 0 exmatrikuliert.
+Dies ist nicht gefordert von der Methode und könnte daher zu einem Problem führen. 
+Eine Variante dies zu vermeiden wäre die Benutzung von pair. Hierbei werden Wertepaare definiert, die wie ein Wert 
+behandelt werden sollen. Dieses pair kann mit insert in den Container map eingefügt werden und mit einer bool Übergabe kann geprüft werden, 
+ob dieses Element bereits im Container eingefügt ist. Zb: pair <interator, bool> insert (pair<K,V> const& x); 
+Diese Sucheabfrage ist const& da auf das Wertepaar x per Referenz verwiesen wird. Ist x.first, also der Schlüssel dieses Elements nicht im Container, 
+so wird es erzeugt und hinzugefügt. Falls nicht wird der vorhandene Wert des Schlüssels verändert. 
+Insert ist vorteilhaft, weil es eine direkte Rückmeldung gibt, sofern das Element bereits in der map vorhanden ist. 
+Mittels dem Iterator find können ELemente mit dem Schlüssel gefunden werden. Dieser wird der Methode per const reference übergeben, da er nicht verändert 
+werden soll, aber auf diesen Wert referenziert werden soll. 
+Bei unsortierten assoziativen Containern ist das Speichern und Suchen sehr schnell möglich, da hier Hashing verwendet wird. 
 
 
 //Ergänzungen
