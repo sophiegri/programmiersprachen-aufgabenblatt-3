@@ -3,7 +3,6 @@
 #include <iostream> // std::cout 
 #include <vector> // std::vector <>
 #include <iterator> // std::ostream_iterator <>
-using namespace std; 
 
 
 int main ()
@@ -31,5 +30,4 @@ std::cout << "My vector contains:";
 return 0;
 
 }
-
 
