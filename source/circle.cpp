@@ -77,7 +77,8 @@ bool Circle::is_inside (Vec2 const& point) const
 //Aufgabe 3.4 / 3.6
 //anhand des radius kann nun der Circle sortiert werden
 
-bool operator < (Circle const& lhs, Circle const& rhs) { //hier wird der kleiner operator definiert 
+bool operator < (Circle const& lhs, Circle const& rhs) //hier wird der kleiner operator definiert
+{  
   if (lhs.get_radius() < rhs.get_radius() ) 
   {
     return true; 

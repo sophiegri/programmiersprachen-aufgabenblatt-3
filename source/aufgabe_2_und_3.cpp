@@ -83,18 +83,6 @@ std::cout << "Zahl " << l << " : Häufigkeit " << Haeufigkeit[l] << std::endl;
 //Für diese Aufgabe eignet sich die Map als Container, da hier zu jeder Zahl, die als key gesetzt wird, ein veränderbarer 
 //value gespeichert werden kann. 
 //Da die Häufigkeit variieren kann, die Zahl aber fest bleibt, ist dieser Container die richtige Lösung für das Problem
-
-
-
-//Aufgabe 3.5 
-
-/* std::map <string,int> matrikelnummern;
-// Hinzufuegen von vielen Studenten
-matrikelnummern ["Max Mustermann"] = 12345;
-matrikelnummern ["Erika Mustermann"] = 23523;
-// ...
-exmatrikulation (matrikelnummern ["Fred Fuchs"]); //hier fehlte ein n */ 
-
 }
 
 

@@ -7,7 +7,7 @@
 
 
 template <typename C, typename P> //Funktion zum filtern
-C filter (C container , P praedikat) { //wir übergeben irgendeinen Container und Prädikat und bekommen einen Container zurück
+C filter (C const& container , P praedikat) { //wir übergeben irgendeinen Container und Prädikat und bekommen einen Container zurück
     
     C container_2;     //neuer Container in dem später die Werte gespeichert werden
     for (auto x : container){ //für alle Elemente aus dem Container

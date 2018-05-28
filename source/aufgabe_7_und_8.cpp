@@ -22,7 +22,7 @@ auto l = [] //Definition des Lambda l
                      lhs.get_radius() < rhs.get_radius() )
                    ); 
       };
-
+//lambda lieber direkt in die SORT ohne die vergleichsoperatoren ganz kurz
 
 //Aufgabe 3.8 Funktor
 
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
 //Aufgabe 3.7 
 
-  sort(sorted_circles.begin(), sorted_circles.end(), l );
+  sort(sorted_circles.begin(), sorted_circles.end(), l ); //hier dann direkt das lambda 
 
   std::cout << "aufsteigende Sortierung nach Radius: " << '\n';
   for (auto a : sorted_circles)

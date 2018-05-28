@@ -29,7 +29,7 @@ std::copy(l_1.cbegin(), l_1.cend(),
 std::ostream_iterator<int>(std::cout, "\n")); //Diese sortierte Liste wird mit einem ostream Iterator ausgegeben 
 
 std::generate(std::begin(v_0), std::end(v_0), std::rand); //Die Elemente des Vektors werden mit zufälligen Werten generiert 
-std::copy(v_0.crbegin(), v_0.crend(), //cr steht für const reference 
+std::copy(v_0.crbegin(), v_0.crend(), //cr steht für const reversed (??)
 std::ostream_iterator<int>(std::cout, "\n")); //Diese neuen Werte werden mit dem ostream Iterator kopiert und direkt ausgegeben
 
 return 0;

@@ -47,6 +47,7 @@ Insert ist vorteilhaft, weil es eine direkte Rückmeldung gibt, sofern das Eleme
 Mittels dem Iterator find können ELemente mit dem Schlüssel gefunden werden. Dieser wird der Methode per const reference übergeben, da er nicht verändert 
 werden soll, aber auf diesen Wert referenziert werden soll. 
 Bei unsortierten assoziativen Containern ist das Speichern und Suchen sehr schnell möglich, da hier Hashing verwendet wird. 
+Die find Methode ist eine einfache Abfrage, die eine Fehlermeldung hervorruft wenn der Wert nicht enthalten ist.
 
 
 //Ergänzungen

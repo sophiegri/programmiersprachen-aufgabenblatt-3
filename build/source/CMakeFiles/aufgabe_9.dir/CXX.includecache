@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sophie/Dokumente/Programmiersprachen/programmiersprachen-aufgabenblatt-3/source/aufgabe_9.cpp
+cstdlib
+-
+vector
+-
+list
+-
+iostream
+-
+iterator
+-
+algorithm
+-
+

@@ -10,8 +10,6 @@
 //Aufgabe 3.14
 
 
-
-//vector <Circle> sorted_circles{c_1,c_2,c_3};
  
 TEST_CASE ("Lambda-Test größer 4.0f")
 {

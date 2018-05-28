@@ -20,11 +20,12 @@ TEST_CASE ("pruefe ob alles 10 ist." "[transform]")
 }
 
 int main(int argc, char* argv[])
-{    
-  auto addition = [] (int x, int y) -> int {return x + y;}; 
+{  
+  //Möglichkeit 1 mit Definition von Lambda aber nicht sinnvoll, lieber in Funktion:
+  //auto addition = [] (int x, int y) -> int {return x + y;}; 
   //auto wichtig, Bindung weist auf Lambda hin
   
-  std::transform (v_1.begin(), v_1.end(), v_2.begin(), v_3.begin(), addition);
+  std::transform (v_1.begin(), v_1.end(), v_2.begin(), v_3.begin(), [] (int x, int y) -> int {return x + y;}); //Lambda direkt in der Funktion
   
   for(auto& i : v_3) 
   {
