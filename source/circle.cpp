@@ -26,6 +26,15 @@ Circle::Circle (float _radius, Vec2 const& _center, Color const& _color, std::st
   name{_name}
   {}
 
+//Aufgabe 3.14
+
+Circle::Circle (float const& _radius):
+  radius{-radius},
+  center{0.0f,0.0f},
+  color{0.0f,0.0f,0.0f},
+  name{"default_name"}
+  {}
+
 
 Vec2 Circle::get_center() const
 {

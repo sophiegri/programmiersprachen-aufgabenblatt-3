@@ -22,6 +22,7 @@ class Circle
     Circle (string const& _name);
     Circle (float _radius, Vec2 const& _center, Color const& _color,
             string const& _name);
+    Circle (float const& _radius);
    
 
     Vec2 get_center() const;
