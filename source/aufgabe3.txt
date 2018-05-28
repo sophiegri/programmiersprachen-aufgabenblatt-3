@@ -16,7 +16,7 @@ Beispiele hierfür: unordered_map, unordered_multimap, unordered_multiset, unord
 
 Für das Speichern der Punkte eines Polygons würde ich einen sequentiellen Container verwenden. Zum Beispiel eine Liste. 
 Für die Zuordnung von Farbnamen und entsprechenden RGB-Werten wäre ein assoziativer Container wie eine map oder set sinnvoll, da hier 
-den bestimmten Elementen bestimmte Werte zugeordnet werden können. R=1,0,0 ; G=0,1,0 ; B=0,0,1 
+den bestimmten Elementen bestimmte Werte zugeordnet werden können. R=1,0,0 ; G=0,1,0 ; B=0,0,1. Der Schlüssel ist in diesem Fall das Wort "rot", der Wert sind die 3 Farbwerte.
 Eine FIFO Warteschlange von Druckaufträgen ist in einem sequentiellen Container wie eine list oder array sinnvoll, da hier eine Ordnung benötigt wird und immer 
 auf das erste Element in dem Container zugegriffen wird. 
 
@@ -30,7 +30,7 @@ matrikelnummern["Erika Mustermann"] = 23523;
 //...
 exmatrikulation(matrikelnummern["Fred Fuchs"]);
 
-Der Container map ist ein assoziativer Container, dessen Elemente einen Schlüssel und einnen Wert haben. 
+Der Container map ist ein assoziativer Container, dessen Elemente einen Schlüssel und einen Wert haben. 
 Der Schlüssel ist in diesem Beispiel der Name und der Wert ist die Matrikelnummer. 
 Mittels des Schlüssels ist das Auffinden von Elementen recht einfach, denn die Elemente dieses Containers sind
 nach ihren Schlüsseln geordnet. Die Schlüssel sind nicht modifizierbar, der Wert kann verändert werden. 
