@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++14 -Wall   CMakeFiles/aufgabe_7_und_8.dir/aufgabe_7_und_8.cpp.o CMakeFiles/aufgabe_7_und_8.dir/circle.cpp.o CMakeFiles/aufgabe_7_und_8.dir/vec2.cpp.o  -o aufgabe_7_und_8 -rdynamic 

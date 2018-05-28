@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++14 -Wall   CMakeFiles/aufgabe_12.dir/aufgabe_12.cpp.o  -o aufgabe_12 -rdynamic 
